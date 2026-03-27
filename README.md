@@ -12,6 +12,6 @@ polepy ze samolepek a tvorbu webových stránek.
 
 ## Další krok před produkcí
 
-- potvrdit kontaktní údaje
 - doplnit finální Google Analytics 4 Measurement ID do `analytics.js`
+- případně nahradit pracovní e-mail `info@recolor.cz` finálním kontaktním e-mailem
 - připojit repozitář na GitHub a projekt na Vercel
