@@ -1,4 +1,4 @@
-const GA_MEASUREMENT_ID = "";
+const GA_MEASUREMENT_ID = "G-FJWHNMX6M7";
 
 if (GA_MEASUREMENT_ID) {
   const gaScript = document.createElement("script");
