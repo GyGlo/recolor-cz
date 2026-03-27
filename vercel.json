@@ -1,4 +1,17 @@
 {
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "recolor.cz"
+        }
+      ],
+      "destination": "https://www.recolor.cz/$1",
+      "permanent": true
+    }
+  ],
   "cleanUrls": true,
   "trailingSlash": true
 }
