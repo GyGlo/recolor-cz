@@ -1,5 +1,5 @@
 {
-  "redirects": [
+  "rewrites": [
     {
       "source": "/(.*)",
       "has": [
@@ -8,9 +8,10 @@
           "value": "test.recolor.cz"
         }
       ],
-      "destination": "https://www.recolor.cz/test/$1",
-      "permanent": false
-    },
+      "destination": "/test/$1"
+    }
+  ],
+  "redirects": [
     {
       "source": "/(.*)",
       "has": [
