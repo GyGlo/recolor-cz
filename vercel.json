@@ -1,16 +1,4 @@
 {
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "has": [
-        {
-          "type": "host",
-          "value": "test.recolor.cz"
-        }
-      ],
-      "destination": "/test/$1"
-    }
-  ],
   "redirects": [
     {
       "source": "/(.*)",
@@ -24,23 +12,33 @@
       "permanent": true
     },
     {
+      "source": "/test",
+      "destination": "https://test.recolor.cz",
+      "permanent": false
+    },
+    {
+      "source": "/test/(.*)",
+      "destination": "https://test.recolor.cz/$1",
+      "permanent": false
+    },
+    {
       "source": "/graficke-navrhy",
-      "destination": "/test/graficke-navrhy",
+      "destination": "https://test.recolor.cz/graficke-navrhy",
       "permanent": false
     },
     {
       "source": "/tiskove-sluzby",
-      "destination": "/test/tiskove-sluzby",
+      "destination": "https://test.recolor.cz/tiskove-sluzby",
       "permanent": false
     },
     {
       "source": "/polepy-ze-samolepek",
-      "destination": "/test/polepy-ze-samolepek",
+      "destination": "https://test.recolor.cz/polepy-ze-samolepek",
       "permanent": false
     },
     {
       "source": "/tvorba-webovych-stranek",
-      "destination": "/test/tvorba-webovych-stranek",
+      "destination": "https://test.recolor.cz/tvorba-webovych-stranek",
       "permanent": false
     }
   ],
