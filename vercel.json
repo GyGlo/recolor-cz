@@ -10,6 +10,26 @@
       ],
       "destination": "https://www.recolor.cz/$1",
       "permanent": true
+    },
+    {
+      "source": "/graficke-navrhy",
+      "destination": "/test/graficke-navrhy",
+      "permanent": false
+    },
+    {
+      "source": "/tiskove-sluzby",
+      "destination": "/test/tiskove-sluzby",
+      "permanent": false
+    },
+    {
+      "source": "/polepy-ze-samolepek",
+      "destination": "/test/polepy-ze-samolepek",
+      "permanent": false
+    },
+    {
+      "source": "/tvorba-webovych-stranek",
+      "destination": "/test/tvorba-webovych-stranek",
+      "permanent": false
     }
   ],
   "cleanUrls": true,
