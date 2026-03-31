@@ -5,6 +5,17 @@
       "has": [
         {
           "type": "host",
+          "value": "test.recolor.cz"
+        }
+      ],
+      "destination": "https://www.recolor.cz/test/$1",
+      "permanent": false
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
           "value": "recolor.cz"
         }
       ],
