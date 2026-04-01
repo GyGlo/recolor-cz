@@ -1,0 +1,15 @@
+{
+  "name": "reColor",
+  "short_name": "reColor",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f4f6f5",
+  "theme_color": "#18a7b5",
+  "icons": [
+    {
+      "src": "/reColor_v1.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
