@@ -1,17 +1,17 @@
 # reColor
 
-Statický prezentační web pro reColor zaměřený na výrobu reklamy, grafické návrhy, tiskové služby,
-polepy ze samolepek a tvorbu webových stránek.
+Repo je rozdělený na dvě veřejné verze:
 
-## Obsah
+- `./` = ostrá minimalistická verze pro `www.recolor.cz`
+- `./test` = rozpracovaná testovací verze pro `test.recolor.cz`
 
-- Homepage s jasnou nabídkou služeb a CTA
-- Samostatné landing stránky pro klíčové služby
-- Technické SEO podklady: `robots.txt`, `sitemap.xml`, schema.org metadata
-- Konfigurace pro statické nasazení na Vercel
+## Nasazení
 
-## Další krok před produkcí
+- hlavní Vercel projekt: `recolor-cz`
+- testovací Vercel projekt: `recolor-cz-test`
 
-- doplnit finální Google Analytics 4 Measurement ID do `analytics.js`
-- případně nahradit pracovní e-mail `info@recolor.cz` finálním kontaktním e-mailem
-- připojit repozitář na GitHub a projekt na Vercel
+## Důležité poznámky
+
+- složka `email-assets/` není součástí tohoto webu a zůstává nedotčená
+- testovací verze má vlastní assety v `./test`, aby byla na subdoméně plně samostatná
+- `robots.txt` a `sitemap.xml` jsou nastavené jen pro ostrou verzi
