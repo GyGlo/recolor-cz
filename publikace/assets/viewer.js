@@ -1,6 +1,6 @@
 import * as pdfjsLib from "./vendor/pdf.mjs";
 
-pdfjsLib.GlobalWorkerOptions.workerSrc = "assets/vendor/pdf.worker.mjs";
+pdfjsLib.GlobalWorkerOptions.workerSrc = "/publikace/assets/vendor/pdf.worker.mjs";
 
 const bookEl = document.querySelector("#book");
 const stageEl = document.querySelector("#book-stage");
@@ -251,7 +251,7 @@ const loadPublication = async () => {
   document.title = `${displayTitle} | Publikace`;
   titleEl.textContent = displayTitle;
 
-  const pdfPath = `publications/${encodeURIComponent(publicationFile)}`;
+  const pdfPath = `/publikace/publications/${encodeURIComponent(publicationFile)}`;
   setStatus("Načítám PDF...", 8);
 
   const loadingTask = pdfjsLib.getDocument({ url: pdfPath });
