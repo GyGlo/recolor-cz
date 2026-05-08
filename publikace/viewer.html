@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="cs">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PDF publikace | reColor</title>
+    <meta name="description" content="Flipbook prohlížeč PDF publikací.">
+    <link rel="stylesheet" href="assets/styles.css?v=20260508-5">
+    <script defer src="assets/vendor/page-flip.browser.min.js"></script>
+  </head>
+  <body class="viewer-page">
+    <header class="viewer-toolbar">
+      <a class="toolbar-button text-button" href="./" aria-label="Zpět na seznam publikací">Seznam</a>
+      <div class="viewer-title-wrap">
+        <p class="viewer-title" id="publication-title">Načítám publikaci...</p>
+        <p class="page-counter" id="page-counter">-</p>
+      </div>
+      <div class="toolbar-actions">
+        <div class="background-switcher" role="group" aria-label="Pozadí vieweru">
+          <button class="background-button is-active" type="button" data-bg-theme="light" title="Světlé pozadí" aria-label="Světlé pozadí"></button>
+          <button class="background-button" type="button" data-bg-theme="warm" title="Tlumené pozadí" aria-label="Tlumené pozadí"></button>
+          <button class="background-button" type="button" data-bg-theme="dim" title="Tmavší pozadí" aria-label="Tmavší pozadí"></button>
+          <button class="background-button" type="button" data-bg-theme="dark" title="Tmavé pozadí" aria-label="Tmavé pozadí"></button>
+        </div>
+        <button class="toolbar-button icon-button" type="button" id="share-button" title="Sdílet odkaz" aria-label="Sdílet odkaz">
+          <span aria-hidden="true">↗</span>
+        </button>
+        <button class="toolbar-button icon-button" type="button" id="fullscreen-button" title="Celá obrazovka" aria-label="Celá obrazovka">
+          <span aria-hidden="true">⛶</span>
+        </button>
+      </div>
+    </header>
+
+    <main class="viewer-shell">
+      <div class="loading-panel" id="loading-panel">
+        <p class="status-text" id="loading-status">Připravuji PDF...</p>
+        <div class="progress-track" aria-hidden="true">
+          <div class="progress-bar" id="progress-bar"></div>
+        </div>
+      </div>
+
+      <section class="book-stage" id="book-stage" aria-label="Flipbook prohlížeč">
+        <div class="book" id="book"></div>
+      </section>
+
+      <nav class="pager-controls" aria-label="Ovládání stránek">
+        <button class="pager-button" type="button" id="prev-button">Předchozí</button>
+        <button class="pager-button primary" type="button" id="next-button">Další</button>
+      </nav>
+    </main>
+
+    <script type="module" src="assets/viewer.js?v=20260508-5"></script>
+  </body>
+</html>
