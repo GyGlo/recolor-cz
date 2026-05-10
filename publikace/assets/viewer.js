@@ -91,7 +91,7 @@ const playPageTurnSound = () => {
 
 const createBlankPage = (side) => {
   const pageEl = document.createElement("div");
-  pageEl.className = `page page-blank page-${side}`;
+  pageEl.className = `page page-blank page-blank-${side} page-${side}`;
   pageEl.setAttribute("aria-hidden", "true");
   return pageEl;
 };
@@ -187,11 +187,17 @@ const updateFlipState = ({ data: state } = {}) => {
   updateCounter();
 };
 
-const startFlipState = () => {
+const updateEdgeFlipState = (nextIndex) => {
+  bookEl.classList.toggle("book-edge-flip", nextIndex <= 0 || nextIndex >= totalPages);
+};
+
+const startFlipState = (nextIndex) => {
   window.clearTimeout(flipStateTimer);
   bookEl.classList.add("book-flipping");
+  updateEdgeFlipState(nextIndex);
   flipStateTimer = window.setTimeout(() => {
     bookEl.classList.remove("book-flipping");
+    bookEl.classList.remove("book-edge-flip");
     flipStateTimer = null;
     updateCounter();
   }, 900);
@@ -204,7 +210,7 @@ const flipBy = (direction) => {
 
   if (nextIndex < 0 || currentIndex >= totalPages && direction === "next") return;
 
-  startFlipState();
+  startFlipState(nextIndex);
   playPageTurnSound();
 
   if (direction === "next") {

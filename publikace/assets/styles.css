@@ -402,6 +402,20 @@ a {
   mix-blend-mode: multiply;
 }
 
+.book.book-edge-flip .stf__block::after {
+  opacity: 0;
+}
+
+.book.book-edge-flip .page-blank {
+  display: none !important;
+}
+
+.book.book-edge-flip .page-blank-left,
+.book.book-edge-flip .page-blank-right,
+.book.book-edge-flip .stf__item:has(.page-blank) {
+  display: none !important;
+}
+
 .page {
   position: relative;
   overflow: hidden;
