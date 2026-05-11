@@ -34,7 +34,7 @@ Název souboru v poli `file` musí přesně odpovídat PDF v adresáři `publica
 3. Nahraj celý obsah této lokální složky `publikace/` do vzdálené složky `/publikace/`.
 4. Ověř:
    - `https://recolor.cz/publikace/`
-   - `https://recolor.cz/publikace/viewer.html?file=SeedService-KatalogOdrud_2026-05_preview2s.pdf`
+   - `https://recolor.cz/publikace/viewer.html?file=SeedService-KatalogOdrud_2026-05_preview.pdf`
 
 ## Poznámky
 
