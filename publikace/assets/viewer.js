@@ -146,7 +146,13 @@ const renderPdfPages = async (pdf) => {
     await page.render({ canvasContext: context, viewport }).promise;
 
     const pageEl = document.createElement("div");
-    pageEl.className = `page ${pageNumber % 2 === 0 ? "page-left" : "page-right"}`;
+    const edgeClass =
+      pageNumber === 2
+        ? "page-edge-underlay-front"
+        : totalPages > 2 && pageNumber === totalPages - 1
+          ? "page-edge-underlay-back"
+          : "";
+    pageEl.className = `page ${pageNumber % 2 === 0 ? "page-left" : "page-right"} ${edgeClass}`.trim();
     pageEl.dataset.page = pageNumber;
 
     const image = document.createElement("img");
@@ -187,17 +193,24 @@ const updateFlipState = ({ data: state } = {}) => {
   updateCounter();
 };
 
-const updateEdgeFlipState = (nextIndex) => {
-  bookEl.classList.toggle("book-edge-flip", nextIndex <= 0 || nextIndex >= totalPages);
+const updateEdgeFlipState = (nextIndex, direction) => {
+  const isFrontEdge = direction === "prev" && nextIndex <= 0;
+  const isBackEdge = direction === "next" && nextIndex >= totalPages;
+
+  bookEl.classList.toggle("book-edge-flip", isFrontEdge || isBackEdge);
+  bookEl.classList.toggle("book-edge-front", isFrontEdge);
+  bookEl.classList.toggle("book-edge-back", isBackEdge);
 };
 
-const startFlipState = (nextIndex) => {
+const startFlipState = (nextIndex, direction) => {
   window.clearTimeout(flipStateTimer);
   bookEl.classList.add("book-flipping");
-  updateEdgeFlipState(nextIndex);
+  updateEdgeFlipState(nextIndex, direction);
   flipStateTimer = window.setTimeout(() => {
     bookEl.classList.remove("book-flipping");
     bookEl.classList.remove("book-edge-flip");
+    bookEl.classList.remove("book-edge-front");
+    bookEl.classList.remove("book-edge-back");
     flipStateTimer = null;
     updateCounter();
   }, 900);
@@ -206,11 +219,12 @@ const startFlipState = (nextIndex) => {
 const flipBy = (direction) => {
   if (!pageFlip) return;
   const currentIndex = pageFlip.getCurrentPageIndex();
-  const nextIndex = direction === "next" ? currentIndex + 1 : currentIndex - 1;
+  const pageStep = pageFlip.getOrientation() === "landscape" ? 2 : 1;
+  const nextIndex = direction === "next" ? currentIndex + pageStep : currentIndex - pageStep;
 
   if (nextIndex < 0 || currentIndex >= totalPages && direction === "next") return;
 
-  startFlipState(nextIndex);
+  startFlipState(nextIndex, direction);
   playPageTurnSound();
 
   if (direction === "next") {

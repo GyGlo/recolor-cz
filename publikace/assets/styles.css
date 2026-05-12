@@ -416,6 +416,12 @@ a {
   display: none !important;
 }
 
+.book.book-edge-front .stf__item:has(.page-edge-underlay-front),
+.book.book-edge-back .stf__item:has(.page-edge-underlay-back) {
+  opacity: 0 !important;
+  pointer-events: none;
+}
+
 .page {
   position: relative;
   overflow: hidden;
