@@ -1,0 +1,74 @@
+[
+  {
+    "title": "Akční nabídka MDA - Asko",
+    "file": "AN_MDA_Asko_2026-27_preview.pdf",
+    "folder": "concept",
+    "cover": "assets/concept/covers/AN_MDA_Asko_2026-27_preview.jpg",
+    "date": "2026-08",
+    "pages": 16,
+    "source": "AN_MDA_Asko_2026-27_RGB.pdf"
+  },
+  {
+    "title": "Akční nabídka MDA - Möbelix",
+    "file": "AN_MDA_Mobelix_2026-27_preview.pdf",
+    "folder": "concept",
+    "cover": "assets/concept/covers/AN_MDA_Mobelix_2026-27_preview.jpg",
+    "date": "2026-08",
+    "pages": 16,
+    "source": "AN_MDA_Mobelix_2026-27_RGB.pdf"
+  },
+  {
+    "title": "Akční nabídka MDA 2 - Region",
+    "file": "Akcni_nabidka_MDA_2_2026_REGION_preview.pdf",
+    "folder": "concept",
+    "cover": "assets/concept/covers/Akcni_nabidka_MDA_2_2026_REGION_preview.jpg",
+    "date": "2026-08",
+    "pages": 24,
+    "source": "Akcni_nabidka_MDA_2_2026_REGION_RGB.pdf"
+  },
+  {
+    "title": "Akční nabídka MDA 2 - Dřevotrust",
+    "file": "Akcni_nabidka_MDA_2_2026_drevotrust_preview.pdf",
+    "folder": "concept",
+    "cover": "assets/concept/covers/Akcni_nabidka_MDA_2_2026_drevotrust_preview.jpg",
+    "date": "2026-08",
+    "pages": 20,
+    "source": "Akcni_nabidka_MDA_2_2026_drevotrust_RGB.pdf"
+  },
+  {
+    "title": "Akční nabídka MDA 2 - Hornbach",
+    "file": "Akcni_nabidka_MDA_2_2026_hornbach_preview.pdf",
+    "folder": "concept",
+    "cover": "assets/concept/covers/Akcni_nabidka_MDA_2_2026_hornbach_preview.jpg",
+    "date": "2026-08",
+    "pages": 20,
+    "source": "Akcni_nabidka_MDA_2_2026_hornbach_RGB.pdf"
+  },
+  {
+    "title": "Akční nabídka MDA 2 - Sconto",
+    "file": "Akcni_nabidka_MDA_2_2026_sconto_preview.pdf",
+    "folder": "concept",
+    "cover": "assets/concept/covers/Akcni_nabidka_MDA_2_2026_sconto_preview.jpg",
+    "date": "2026-08",
+    "pages": 16,
+    "source": "Akcni_nabidka_MDA_2_2026_sconto_RGB.pdf"
+  },
+  {
+    "title": "Kitchen Book CZ",
+    "file": "LO7300-KitchenBookCZ_2026-09_fD_preview.pdf",
+    "folder": "concept",
+    "cover": "assets/concept/covers/LO7300-KitchenBookCZ_2026-09_fD_preview.jpg",
+    "date": "2026-09",
+    "pages": 22,
+    "source": "LO7300-KitchenBookCZ_2026-09_fD_RGB.pdf"
+  },
+  {
+    "title": "SDA katalog 2026",
+    "file": "SDA_katalog_2026_tisk-digital_fD_preview.pdf",
+    "folder": "concept",
+    "cover": "assets/concept/covers/SDA_katalog_2026_tisk-digital_fD_preview.jpg",
+    "date": "2026-08",
+    "pages": 88,
+    "source": "SDA_katalog_2026_tisk-digital_fD_RGB.pdf"
+  }
+]

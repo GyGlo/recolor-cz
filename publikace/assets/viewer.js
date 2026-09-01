@@ -17,8 +17,11 @@ const backgroundButtons = [...document.querySelectorAll("[data-bg-theme]")];
 
 const params = new URLSearchParams(window.location.search);
 const fileParam = params.get("file") || "";
+const folderParam = params.get("folder") || "";
 const safeFilePattern = /^[a-zA-Z0-9._ -]+\.pdf$/i;
+const safeFolderPattern = /^[a-zA-Z0-9_-]+$/;
 const publicationFile = safeFilePattern.test(fileParam) ? fileParam : "";
+const publicationFolder = safeFolderPattern.test(folderParam) ? folderParam : "";
 const backgroundStorageKey = "publicationViewerBackground";
 const backgroundThemes = new Set(["light", "warm", "dim", "dark"]);
 let pageFlip;
@@ -271,7 +274,9 @@ const loadPublication = async () => {
   document.title = `${displayTitle} | Publikace`;
   titleEl.textContent = displayTitle;
 
-  const pdfPath = `/publikace/publications/${encodeURIComponent(publicationFile)}`;
+  const pdfPath = publicationFolder
+    ? `/publikace/publications/${encodeURIComponent(publicationFolder)}/${encodeURIComponent(publicationFile)}`
+    : `/publikace/publications/${encodeURIComponent(publicationFile)}`;
   setStatus("Načítám PDF...", 8);
 
   const loadingTask = pdfjsLib.getDocument({ url: pdfPath });

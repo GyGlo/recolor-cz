@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="cs">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Publikace CONCEPT | reColor</title>
+    <meta name="description" content="Flipbook publikace značky CONCEPT.">
+    <link rel="stylesheet" href="/publikace/assets/styles.css?v=20260901-1">
+  </head>
+  <body class="concept-page">
+    <header class="site-header concept-header">
+      <a class="brand" href="/publikace/concept/" aria-label="Publikace CONCEPT">Publikace CONCEPT</a>
+      <nav class="concept-nav" aria-label="Navigace">
+        <a class="header-link" href="/publikace/">Seed Service</a>
+        <button class="toolbar-button text-button" type="button" id="edit-toggle">Upravit</button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="concept-hero">
+        <img src="/publikace/assets/concept/concept-hero.png" alt="" aria-hidden="true">
+        <div class="concept-hero-content">
+          <p class="eyebrow">PDF flipbook</p>
+          <h1>Publikace CONCEPT</h1>
+        </div>
+      </section>
+
+      <section class="concept-shell" aria-label="Seznam publikací">
+        <div class="concept-section-head">
+          <div>
+            <p class="eyebrow">Archiv</p>
+            <h2>Aktuální publikace</h2>
+          </div>
+          <button class="toolbar-button text-button" type="button" id="add-publication" hidden>+ Přidat</button>
+        </div>
+
+        <section class="concept-editor" id="concept-editor" hidden>
+          <form class="concept-form" id="publication-form">
+            <input type="hidden" id="edit-index">
+            <label>
+              <span>Měsíc</span>
+              <input id="publication-month" type="month" required>
+            </label>
+            <label>
+              <span>Název</span>
+              <input id="publication-name" type="text" required>
+            </label>
+            <label class="file-drop" id="file-drop">
+              <span>PDF soubor</span>
+              <input id="publication-file" type="file" accept="application/pdf">
+            </label>
+            <div class="editor-actions">
+              <button class="pager-button primary" type="submit">Publikovat</button>
+              <button class="toolbar-button text-button" type="button" id="cancel-edit">Zrušit</button>
+              <button class="toolbar-button text-button" type="button" id="export-json">Export JSON</button>
+              <button class="toolbar-button text-button" type="button" id="reset-local">Reset</button>
+            </div>
+          </form>
+          <p class="editor-note">Změny v editačním režimu jsou lokální náhled. Trvalé zveřejnění PDF na webu probíhá přes GitHub/Vercel.</p>
+        </section>
+
+        <section class="concept-year-list" id="concept-list" aria-live="polite">
+          <p class="status-text">Načítám publikace...</p>
+        </section>
+      </section>
+    </main>
+
+    <script type="module" src="/publikace/assets/concept.js?v=20260901-1"></script>
+  </body>
+</html>
