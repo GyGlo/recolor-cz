@@ -782,6 +782,18 @@ a {
   font-size: 13px;
 }
 
+.editor-note[data-tone="busy"] {
+  color: #7b6417;
+}
+
+.editor-note[data-tone="success"] {
+  color: #0b6b57;
+}
+
+.editor-note[data-tone="error"] {
+  color: #a53125;
+}
+
 .concept-year-list {
   display: grid;
   gap: 32px;

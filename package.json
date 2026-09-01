@@ -1,0 +1,12 @@
+{
+  "type": "module",
+  "scripts": {
+    "build:concept": "esbuild publikace/assets/concept-source.js --bundle --format=esm --target=es2022 --outfile=publikace/assets/concept.js"
+  },
+  "dependencies": {
+    "@vercel/blob": "^2.1.1"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.10"
+  }
+}

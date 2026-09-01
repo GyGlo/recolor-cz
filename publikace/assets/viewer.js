@@ -18,9 +18,22 @@ const backgroundButtons = [...document.querySelectorAll("[data-bg-theme]")];
 const params = new URLSearchParams(window.location.search);
 const fileParam = params.get("file") || "";
 const folderParam = params.get("folder") || "";
+const urlParam = params.get("url") || "";
 const safeFilePattern = /^[a-zA-Z0-9._ -]+\.pdf$/i;
 const safeFolderPattern = /^[a-zA-Z0-9_-]+$/;
-const publicationFile = safeFilePattern.test(fileParam) ? fileParam : "";
+const safeBlobUrl = (() => {
+  if (!urlParam) return "";
+
+  try {
+    const url = new URL(urlParam);
+    const isBlobHost = /(^|\.)blob\.vercel-storage\.com$/i.test(url.hostname);
+    return url.protocol === "https:" && isBlobHost && /\.pdf$/i.test(url.pathname) ? url.href : "";
+  } catch {
+    return "";
+  }
+})();
+const blobFileName = safeBlobUrl ? decodeURIComponent(new URL(safeBlobUrl).pathname.split("/").pop() || "") : "";
+const publicationFile = safeFilePattern.test(fileParam) ? fileParam : safeFilePattern.test(blobFileName) ? blobFileName : "";
 const publicationFolder = safeFolderPattern.test(folderParam) ? folderParam : "";
 const backgroundStorageKey = "publicationViewerBackground";
 const backgroundThemes = new Set(["light", "warm", "dim", "dark"]);
@@ -266,7 +279,7 @@ const buildFlipbook = async (pages) => {
 };
 
 const loadPublication = async () => {
-  if (!publicationFile) {
+  if (!publicationFile || (urlParam && !safeBlobUrl)) {
     throw new Error("Chybí nebo není platný parametr ?file=publikace.pdf.");
   }
 
@@ -274,9 +287,9 @@ const loadPublication = async () => {
   document.title = `${displayTitle} | Publikace`;
   titleEl.textContent = displayTitle;
 
-  const pdfPath = publicationFolder
+  const pdfPath = safeBlobUrl || (publicationFolder
     ? `/publikace/publications/${encodeURIComponent(publicationFolder)}/${encodeURIComponent(publicationFile)}`
-    : `/publikace/publications/${encodeURIComponent(publicationFile)}`;
+    : `/publikace/publications/${encodeURIComponent(publicationFile)}`);
   setStatus("Načítám PDF...", 8);
 
   const loadingTask = pdfjsLib.getDocument({ url: pdfPath });
