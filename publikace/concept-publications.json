@@ -63,6 +63,33 @@
     "source": "LO7300-KitchenBookCZ_2026-09_fD_RGB.pdf"
   },
   {
+    "title": "Kitchen Book EN",
+    "file": "LO7300-KitchenBookEN_2026-09_fD_preview.pdf",
+    "folder": "concept",
+    "cover": "assets/concept/covers/LO7300-KitchenBookEN_2026-09_fD_preview.jpg",
+    "date": "2026-09",
+    "pages": 43,
+    "source": "LO7300-KitchenBookEN_2026-09_fD_RGB.pdf"
+  },
+  {
+    "title": "Kitchen Book PL",
+    "file": "LO7300-KitchenBookPL_2026-09_fD_preview.pdf",
+    "folder": "concept",
+    "cover": "assets/concept/covers/LO7300-KitchenBookPL_2026-09_fD_preview.jpg",
+    "date": "2026-09",
+    "pages": 43,
+    "source": "LO7300-KitchenBookPL_2026-09_fD_RGB.pdf"
+  },
+  {
+    "title": "Kitchen Book SK",
+    "file": "LO7300-KitchenBookSK_2026-09_fD_preview.pdf",
+    "folder": "concept",
+    "cover": "assets/concept/covers/LO7300-KitchenBookSK_2026-09_fD_preview.jpg",
+    "date": "2026-09",
+    "pages": 43,
+    "source": "LO7300-KitchenBookSK_2026-09_fD_RGB.pdf"
+  },
+  {
     "title": "SDA katalog 2026",
     "file": "SDA_katalog_2026_tisk-digital_fD_preview.pdf",
     "folder": "concept",

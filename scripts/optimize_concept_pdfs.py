@@ -21,6 +21,9 @@ TITLE_OVERRIDES = {
     "Akcni_nabidka_MDA_2_2026_hornbach_RGB.pdf": "Akční nabídka MDA 2 - Hornbach",
     "Akcni_nabidka_MDA_2_2026_sconto_RGB.pdf": "Akční nabídka MDA 2 - Sconto",
     "LO7300-KitchenBookCZ_2026-09_fD_RGB.pdf": "Kitchen Book CZ",
+    "LO7300-KitchenBookEN_2026-09_fD_RGB.pdf": "Kitchen Book EN",
+    "LO7300-KitchenBookPL_2026-09_fD_RGB.pdf": "Kitchen Book PL",
+    "LO7300-KitchenBookSK_2026-09_fD_RGB.pdf": "Kitchen Book SK",
     "SDA_katalog_2026_tisk-digital_fD_RGB.pdf": "SDA katalog 2026",
 }
 
