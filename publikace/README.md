@@ -61,6 +61,8 @@ https://www.recolor.cz/publikace/concept/?edit=1
 
 Protože aplikace běží bez backendu a databáze, editační mód ukládá změny jen lokálně v prohlížeči. Pro trvalé nasazení je potřeba PDF a exportovaný `concept-publications.json` uložit do repozitáře a nasadit přes GitHub/Vercel nebo FTP.
 
+Editační mód je chráněný heslem zadaným v klientské aplikaci. Na čistě statickém hostingu jde o jednoduchou ochranu před běžnými návštěvníky, ne o plnohodnotné serverové zabezpečení.
+
 ## Nasazení přes FTP
 
 1. Připoj se přes FTP/SFTP k hostingu pro doménu.

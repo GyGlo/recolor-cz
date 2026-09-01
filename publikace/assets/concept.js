@@ -11,14 +11,29 @@ const fileDrop = document.querySelector("#file-drop");
 const cancelButton = document.querySelector("#cancel-edit");
 const exportButton = document.querySelector("#export-json");
 const resetButton = document.querySelector("#reset-local");
+const passwordDialog = document.querySelector("#password-dialog");
+const passwordForm = document.querySelector("#password-form");
+const passwordInput = document.querySelector("#editor-password");
+const passwordError = document.querySelector("#password-error");
+const passwordCancel = document.querySelector("#password-cancel");
 
 const storageKey = "conceptPublicationsDraft";
+const editorPasswordHash = "f9eb3caedd5e975fe700b461e63a6cf3d75aa6657d9a6d049252077a2801e0fa";
 const objectUrls = new Map();
 let basePublications = [];
 let publications = [];
-let isEditing = new URLSearchParams(window.location.search).get("edit") === "1";
+const shouldOpenEditor = new URLSearchParams(window.location.search).get("edit") === "1";
+let isEditing = false;
+let isEditorUnlocked = false;
+let pendingUnlock = false;
 
 const clonePublications = (items) => JSON.parse(JSON.stringify(items));
+
+const hashValue = async (value) => {
+  const bytes = new TextEncoder().encode(value);
+  const digest = await crypto.subtle.digest("SHA-256", bytes);
+  return [...new Uint8Array(digest)].map((byte) => byte.toString(16).padStart(2, "0")).join("");
+};
 
 const normalizePreviewName = (name) => {
   const cleanName = name
@@ -146,7 +161,16 @@ const renderPublications = () => {
   });
 };
 
-const setEditing = (nextState) => {
+const setEditing = async (nextState) => {
+  if (nextState && !isEditorUnlocked) {
+    pendingUnlock = true;
+    passwordError.hidden = true;
+    passwordInput.value = "";
+    passwordDialog.showModal();
+    window.setTimeout(() => passwordInput.focus(), 0);
+    return;
+  }
+
   isEditing = nextState;
   editorEl.hidden = !isEditing;
   addButton.hidden = !isEditing;
@@ -199,6 +223,32 @@ const loadPublications = async () => {
 };
 
 editToggle.addEventListener("click", () => setEditing(!isEditing));
+passwordForm.addEventListener("submit", async (event) => {
+  event.preventDefault();
+  const hash = await hashValue(passwordInput.value);
+
+  if (hash !== editorPasswordHash) {
+    passwordError.hidden = false;
+    passwordInput.select();
+    return;
+  }
+
+  isEditorUnlocked = true;
+  pendingUnlock = false;
+  passwordDialog.close();
+  setEditing(true);
+});
+passwordDialog.addEventListener("close", () => {
+  if (pendingUnlock) {
+    pendingUnlock = false;
+    isEditing = false;
+    editorEl.hidden = true;
+    addButton.hidden = true;
+    editToggle.textContent = "Upravit";
+    renderPublications();
+  }
+});
+passwordCancel.addEventListener("click", () => passwordDialog.close());
 addButton.addEventListener("click", () => {
   resetForm();
   editorEl.hidden = false;
@@ -267,7 +317,7 @@ form.addEventListener("submit", (event) => {
 
 try {
   await loadPublications();
-  setEditing(isEditing);
+  await setEditing(shouldOpenEditor);
 } catch (error) {
   listEl.replaceChildren();
   const message = document.createElement("p");

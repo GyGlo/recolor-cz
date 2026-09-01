@@ -5,13 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Publikace CONCEPT | reColor</title>
     <meta name="description" content="Flipbook publikace značky CONCEPT.">
-    <link rel="stylesheet" href="/publikace/assets/styles.css?v=20260901-1">
+    <link rel="stylesheet" href="/publikace/assets/styles.css?v=20260901-2">
   </head>
   <body class="concept-page">
     <header class="site-header concept-header">
       <a class="brand" href="/publikace/concept/" aria-label="Publikace CONCEPT">Publikace CONCEPT</a>
       <nav class="concept-nav" aria-label="Navigace">
-        <a class="header-link" href="/publikace/">Seed Service</a>
         <button class="toolbar-button text-button" type="button" id="edit-toggle">Upravit</button>
       </nav>
     </header>
@@ -65,6 +64,21 @@
       </section>
     </main>
 
-    <script type="module" src="/publikace/assets/concept.js?v=20260901-1"></script>
+    <dialog class="password-dialog" id="password-dialog" aria-labelledby="password-title">
+      <form method="dialog" class="password-form" id="password-form">
+        <h2 id="password-title">Editační režim</h2>
+        <label>
+          <span>Heslo</span>
+          <input id="editor-password" type="password" autocomplete="current-password" required>
+        </label>
+        <p class="password-error" id="password-error" hidden>Nesprávné heslo.</p>
+        <div class="editor-actions">
+          <button class="pager-button primary" type="submit">Odemknout</button>
+          <button class="toolbar-button text-button" type="button" id="password-cancel">Zrušit</button>
+        </div>
+      </form>
+    </dialog>
+
+    <script type="module" src="/publikace/assets/concept.js?v=20260901-2"></script>
   </body>
 </html>
