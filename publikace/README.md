@@ -13,8 +13,6 @@ Složka `publikace/` je samostatná statická webová aplikace pro zobrazování
 - `publications/concept/` - PDF soubory CONCEPT publikací
 - `publications.json` - jednoduchý manifest pro seznam publikací
 - `concept-publications.json` - manifest CONCEPT publikací
-- `../api/concept-upload.js` - Vercel funkce pro autorizaci uploadu PDF do Blob
-- `../api/concept-publications.js` - Vercel funkce pro čtení a zápis CONCEPT manifestu
 
 ## Přidání nové publikace
 
@@ -55,24 +53,7 @@ Jednotlivé CONCEPT publikace se otevírají přes stejný viewer s parametrem `
 https://www.recolor.cz/publikace/viewer/?folder=concept&file=Akcni_nabidka_MDA_2_2026_sconto_preview.pdf
 ```
 
-Editační mód na statickém webu zapne tlačítko `Upravit` nebo parametr:
-
-```text
-https://www.recolor.cz/publikace/concept/?edit=1
-```
-
-Na Vercelu používá editační mód Vercel Blob:
-
-- PDF se po zadání hesla nahrává přímo z prohlížeče do Blob úložiště.
-- Manifest publikací se ukládá jako `recolor/concept/publications.json` ve Vercel Blob.
-- PDF soubory se ukládají pod prefix `recolor/concept/`, aby mohl stejný Blob store bezpečně sloužit více projektům.
-- Viewer otevírá nové publikace přes `url` parametr, například `/publikace/viewer/?url=...&file=nazev_preview.pdf`.
-
-Pro fungování uploadu musí být u projektu na Vercelu připojený Blob store s proměnnou `BLOB_READ_WRITE_TOKEN`. Volitelně lze nastavit `CONCEPT_EDITOR_PASSWORD_HASH`; když chybí, použije se hash hesla domluveného pro tento projekt.
-
-Na čistě statickém FTP hostingu bez Vercel funkcí zůstává možné publikace nasazovat ručně přes soubory ve složce `publications/concept/` a manifest `concept-publications.json`.
-
-Editační mód je chráněný heslem zadaným v klientské aplikaci. Na čistě statickém hostingu jde o jednoduchou ochranu před běžnými návštěvníky, ne o plnohodnotné serverové zabezpečení.
+Editační mód je na veřejné CONCEPT stránce dočasně skrytý. Publikace se zatím aktualizují přes zdrojovou složku a nasazení repozitáře.
 
 ## Nasazení přes FTP
 

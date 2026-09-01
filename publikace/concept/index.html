@@ -5,14 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Publikace CONCEPT | reColor</title>
     <meta name="description" content="Flipbook publikace značky CONCEPT.">
-    <link rel="stylesheet" href="/publikace/assets/styles.css?v=20260901-3">
+    <link rel="stylesheet" href="/publikace/assets/styles.css?v=20260901-4">
   </head>
   <body class="concept-page">
     <header class="site-header concept-header">
       <a class="brand" href="/publikace/concept/" aria-label="Publikace CONCEPT">Publikace CONCEPT</a>
-      <nav class="concept-nav" aria-label="Navigace">
-        <button class="toolbar-button text-button" type="button" id="edit-toggle">Upravit</button>
-      </nav>
     </header>
 
     <main>
@@ -30,33 +27,7 @@
             <p class="eyebrow">Archiv</p>
             <h2>Aktuální publikace</h2>
           </div>
-          <button class="toolbar-button text-button" type="button" id="add-publication" hidden>+ Přidat</button>
         </div>
-
-        <section class="concept-editor" id="concept-editor" hidden>
-          <form class="concept-form" id="publication-form">
-            <input type="hidden" id="edit-index">
-            <label>
-              <span>Měsíc</span>
-              <input id="publication-month" type="month" required>
-            </label>
-            <label>
-              <span>Název</span>
-              <input id="publication-name" type="text" required>
-            </label>
-            <label class="file-drop" id="file-drop">
-              <span>PDF soubor</span>
-              <input id="publication-file" type="file" accept="application/pdf">
-            </label>
-            <div class="editor-actions">
-              <button class="pager-button primary" type="submit">Publikovat</button>
-              <button class="toolbar-button text-button" type="button" id="cancel-edit">Zrušit</button>
-              <button class="toolbar-button text-button" type="button" id="export-json">Export JSON</button>
-              <button class="toolbar-button text-button" type="button" id="reset-local">Reset</button>
-            </div>
-          </form>
-          <p class="editor-note" id="editor-status">Po publikování se PDF nahraje do Vercel Blob a změny se uloží na web.</p>
-        </section>
 
         <section class="concept-year-list" id="concept-list" aria-live="polite">
           <p class="status-text">Načítám publikace...</p>
@@ -64,21 +35,6 @@
       </section>
     </main>
 
-    <dialog class="password-dialog" id="password-dialog" aria-labelledby="password-title">
-      <form method="dialog" class="password-form" id="password-form">
-        <h2 id="password-title">Editační režim</h2>
-        <label>
-          <span>Heslo</span>
-          <input id="editor-password" type="password" autocomplete="current-password" required>
-        </label>
-        <p class="password-error" id="password-error" hidden>Nesprávné heslo.</p>
-        <div class="editor-actions">
-          <button class="pager-button primary" type="submit">Odemknout</button>
-          <button class="toolbar-button text-button" type="button" id="password-cancel">Zrušit</button>
-        </div>
-      </form>
-    </dialog>
-
-    <script type="module" src="/publikace/assets/concept.js?v=20260901-3"></script>
+    <script type="module" src="/publikace/assets/concept.js?v=20260901-4"></script>
   </body>
 </html>
