@@ -9,6 +9,7 @@ const loadingStatus = document.querySelector("#loading-status");
 const progressBar = document.querySelector("#progress-bar");
 const titleEl = document.querySelector("#publication-title");
 const counterEl = document.querySelector("#page-counter");
+const listLink = document.querySelector("#list-link");
 const prevButton = document.querySelector("#prev-button");
 const nextButton = document.querySelector("#next-button");
 const fullscreenButton = document.querySelector("#fullscreen-button");
@@ -41,6 +42,11 @@ let pageFlip;
 let totalPages = 0;
 let flipStateTimer;
 let audioContext;
+
+if (publicationFolder === "concept") {
+  listLink.href = "/publikace/concept/";
+  listLink.setAttribute("aria-label", "Zpět na seznam CONCEPT publikací");
+}
 
 const getAudioContext = () => {
   if (!audioContext) {
