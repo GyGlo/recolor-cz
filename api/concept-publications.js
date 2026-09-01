@@ -4,7 +4,7 @@ import { readFile } from "node:fs/promises";
 import path from "node:path";
 
 const fallbackPasswordHash = "f9eb3caedd5e975fe700b461e63a6cf3d75aa6657d9a6d049252077a2801e0fa";
-const manifestPath = "concept/publications.json";
+const manifestPath = "recolor/concept/publications.json";
 const staticManifestPath = path.join(process.cwd(), "publikace", "concept-publications.json");
 
 const sendJson = (response, status, body) => {

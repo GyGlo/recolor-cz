@@ -6784,7 +6784,7 @@ form.addEventListener("submit", async (event) => {
     submitButton.disabled = true;
     if (file) {
       setEditorStatus("Nahr\xE1v\xE1m PDF do Vercel Blob...", "busy");
-      const blob = await upload(`concept/${cleanFileName}`, file, {
+      const blob = await upload(`recolor/concept/${cleanFileName}`, file, {
         access: "public",
         handleUploadUrl: "/api/concept-upload/",
         clientPayload: JSON.stringify({ password: editorPassword })

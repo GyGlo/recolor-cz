@@ -64,7 +64,8 @@ https://www.recolor.cz/publikace/concept/?edit=1
 Na Vercelu používá editační mód Vercel Blob:
 
 - PDF se po zadání hesla nahrává přímo z prohlížeče do Blob úložiště.
-- Manifest publikací se ukládá jako `concept/publications.json` ve Vercel Blob.
+- Manifest publikací se ukládá jako `recolor/concept/publications.json` ve Vercel Blob.
+- PDF soubory se ukládají pod prefix `recolor/concept/`, aby mohl stejný Blob store bezpečně sloužit více projektům.
 - Viewer otevírá nové publikace přes `url` parametr, například `/publikace/viewer/?url=...&file=nazev_preview.pdf`.
 
 Pro fungování uploadu musí být u projektu na Vercelu připojený Blob store s proměnnou `BLOB_READ_WRITE_TOKEN`. Volitelně lze nastavit `CONCEPT_EDITOR_PASSWORD_HASH`; když chybí, použije se hash hesla domluveného pro tento projekt.

@@ -13,7 +13,7 @@ const hashValue = (value) => createHash("sha256").update(value || "").digest("he
 
 const getPasswordHash = () => process.env.CONCEPT_EDITOR_PASSWORD_HASH || fallbackPasswordHash;
 
-const isSafePathname = (pathname) => /^concept\/[a-zA-Z0-9._-]+_preview\.pdf$/i.test(pathname);
+const isSafePathname = (pathname) => /^recolor\/concept\/[a-zA-Z0-9._-]+_preview\.pdf$/i.test(pathname);
 
 const getBody = (request) => (typeof request.body === "string" ? JSON.parse(request.body) : request.body);
 
