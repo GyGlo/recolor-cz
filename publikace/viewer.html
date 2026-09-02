@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>PDF publikace | reColor</title>
     <meta name="description" content="Flipbook prohlížeč PDF publikací.">
-    <link rel="stylesheet" href="/publikace/assets/styles.css?v=20260901-5">
+    <link rel="stylesheet" href="/publikace/assets/styles.css?v=20260902-1">
     <script defer src="/publikace/assets/vendor/page-flip.browser.min.js"></script>
   </head>
   <body class="viewer-page">
@@ -16,6 +16,11 @@
         <p class="page-counter" id="page-counter">-</p>
       </div>
       <div class="toolbar-actions">
+        <div class="zoom-controls" role="group" aria-label="Přiblížení vieweru">
+          <button class="toolbar-button icon-button" type="button" id="zoom-out-button" title="Oddálit" aria-label="Oddálit">−</button>
+          <button class="toolbar-button reset-zoom-button" type="button" id="zoom-reset-button" title="Výchozí velikost a poloha" aria-label="Výchozí velikost a poloha">100 %</button>
+          <button class="toolbar-button icon-button" type="button" id="zoom-in-button" title="Přiblížit" aria-label="Přiblížit">+</button>
+        </div>
         <div class="background-switcher" role="group" aria-label="Pozadí vieweru">
           <button class="background-button is-active" type="button" data-bg-theme="light" title="Světlé pozadí" aria-label="Světlé pozadí"></button>
           <button class="background-button" type="button" data-bg-theme="warm" title="Tlumené pozadí" aria-label="Tlumené pozadí"></button>
@@ -40,7 +45,9 @@
       </div>
 
       <section class="book-stage" id="book-stage" aria-label="Flipbook prohlížeč">
-        <div class="book" id="book"></div>
+        <div class="book-viewport" id="book-viewport">
+          <div class="book" id="book"></div>
+        </div>
       </section>
 
       <nav class="pager-controls" aria-label="Ovládání stránek">
@@ -49,6 +56,6 @@
       </nav>
     </main>
 
-    <script type="module" src="/publikace/assets/viewer.js?v=20260901-5"></script>
+    <script type="module" src="/publikace/assets/viewer.js?v=20260902-1"></script>
   </body>
 </html>
