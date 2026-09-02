@@ -149,13 +149,13 @@ const setBackgroundTheme = (theme) => {
 
 const updateSpineMetrics = () => {
   window.requestAnimationFrame(() => {
-    const pageHeights = [...bookEl.querySelectorAll(".page:not(.page-blank) img")]
-      .map((image) => image.getBoundingClientRect().height)
+    const pageHeights = [...bookEl.querySelectorAll(".page:not(.page-blank)")]
+      .map((page) => page.offsetHeight)
       .filter((height) => height > 0);
     const pageHeight = Math.max(0, ...pageHeights);
 
     if (pageHeight > 0) {
-      bookEl.style.setProperty("--spine-height", `${Math.round(pageHeight / zoomLevel)}px`);
+      bookEl.style.setProperty("--spine-height", `${Math.round(pageHeight)}px`);
     }
   });
 };

@@ -402,7 +402,7 @@ a {
   left: 50%;
   z-index: 6;
   width: clamp(12px, 1.45vw, 22px);
-  height: min(100%, var(--spine-height, 100%));
+  height: var(--spine-height, 100%);
   pointer-events: none;
   content: "";
   opacity: 0;
